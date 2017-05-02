@@ -1,0 +1,107 @@
+/* BASE */
+:root {
+    --main-color: #4BA7EF;
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Condensed-Bold;
+    src: url(../fonts/RobotoCondensed-Bold.ttf);
+}
+
+body {
+    font-family: Roboto-Regular;
+    font-size: 16px;
+
+
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-image: url(../img/main.jpeg);
+    background-size: 100%;
+}
+/* BASE */
+
+/* HEADER */
+nav {
+    position: fixed;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    background: white;
+}
+
+.logo {
+    position: absolute;
+    top: 4px;
+    left: 20px;
+    height: 50px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-family: Roboto-Condensed-Bold;
+    font-size: 30px;
+    color: var(--main-color);
+    user-select: none;
+    cursor: pointer;
+    display: table;
+}
+
+.logo:visited span {
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+.logo > img {
+    position: relative;
+    float: left;
+    height: 42px;
+}
+
+.logo > span {
+    margin-left: 5px;
+    display: inline-block;
+}
+
+ul.menu {
+    position: relative;
+    left: 600px;
+    height: 100%;
+}
+
+ul.menu li {
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 150px;
+    padding: 0 30px;
+    list-style: none;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    display: table;
+    transition: background 0.25s ease,
+                border-bottom 0.1s ease;
+}
+
+ul.menu li:hover {
+    border-bottom: 3px solid var(--main-color);
+    background: rgba(0,0,0,0.1);
+}
+
+ul.menu a {
+    color: black;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+ul.menu li:hover a {
+    text-decoration: none;
+    color: var(--main-color);
+    position: relative;
+    bottom: -1.5px;
+}
+/* HEADER END */

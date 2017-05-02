@@ -1,0 +1,6 @@
+{
+  "name": "devit",
+  "description": "Programming courses aggregator",
+  "repository": "https://github.com/antonyq/devit",
+  "logo": "src/public/img/logo.png"
+}
