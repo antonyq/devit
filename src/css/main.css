@@ -50,7 +50,8 @@ nav {
     display: table;
 }
 
-.logo:visited span {
+.logo:visited span,
+.logo:hover span {
     text-decoration: none;
     color: var(--main-color);
 }
