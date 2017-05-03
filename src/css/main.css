@@ -67,42 +67,99 @@ nav {
     display: inline-block;
 }
 
-ul.menu {
+.menu {
     position: relative;
-    left: 600px;
+    float: right;
+    margin-right: 50px;
     height: 100%;
+    background: white;
 }
 
-ul.menu li {
-    position: relative;
-    float: left;
-    height: 100%;
-    width: 150px;
-    padding: 0 30px;
+.menu li {
     list-style: none;
-    text-align: center;
-    font-size: 20px;
-    cursor: pointer;
-    display: table;
-    transition: background 0.25s ease,
-                border-bottom 0.1s ease;
+    transition: background 0.25s ease;
 }
 
-ul.menu li:hover {
-    border-bottom: 3px solid var(--main-color);
+.menu li:hover {
     background: rgba(0,0,0,0.1);
 }
 
-ul.menu a {
+.menu li:after {
+    content: '';
+    border-bottom: solid 2px var(--main-color);
+    transform: scaleX(0);
+    transition: transform 0.25s ease-in-out;
+    display: block;
+}
+
+.menu li:hover:after {
+    position: relative;
+    top: 2px;
+    left: -5px;
+    width: 107%;
+
+    transform: scaleX(1);
+    transform-origin: 0% 50%;
+}
+
+.menu a {
     color: black;
     vertical-align: middle;
     display: table-cell;
 }
 
-ul.menu li:hover a {
+.menu a:visited,
+.menu a:active {
+    text-decoration: none;
+}
+
+.menu > li {
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 150px;
+    padding: 0 30px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    display: table;
+}
+
+.menu li:hover > a {
+    position: relative;
     text-decoration: none;
     color: var(--main-color);
+}
+
+
+.dropdown > a {
+    z-index: 10;
+}
+
+.dropdown ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    color: black;
+    font-size: 18px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    background: white;
+    z-index: -1;
+    transform: translateY(-50%);
+    transition: all 0.25s ease-out;
+}
+
+.dropdown:hover ul {
+    top: 60px;
+    left: 0;
+    transform: translateY(0);
+}
+
+.dropdown ul li {
     position: relative;
-    bottom: -1.5px;
+    top: 0px;
+    padding: 2px 5px;
+    margin-left: -36%;
 }
 /* HEADER END */
