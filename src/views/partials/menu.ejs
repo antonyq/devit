@@ -3,9 +3,34 @@
 <nav>
     <a class="logo" href="#">
         <img src="../img/favicon.png" alt="DevIt">
-        <span><%= sitename %></span>
+        <span><%= localization.sitename %></span>
     </a>
     <ul class="menu">
+        <% for (let i in localization.paragraphs) { %>
+            <% if (localization.paragraphs[i].hasOwnProperty('items')) { %>
+                <li class="dropdown">
+                    <a href="#"><%= localization.paragraphs[i].title %></a>
+                    <ul>
+                        <% localization.paragraphs[i].items.forEach((item) => { %>
+                            <li class="dropdown-2">
+                                <a href="#"><%= item.title %></a>
+                                <% if (item.hasOwnProperty('items')) { %>
+                                    <ul>
+                                        <% item.items.forEach((subItem) => { %>
+                                            <li><a href=""><%= subItem.title %></a></li>
+                                        <% }) %>
+                                    </ul>
+                                <% } %>
+                            </li>
+                        <% }); %>
+                    </ul>
+                </li>
+            <% } else { %>
+                    <li><a href="#"> localization.paragraphs[i].title </a></li>
+            <% } %>
+        <% } %>
+
+
         <li class="dropdown">
             <a href="#">КУРСЫ</a>
             <ul>

@@ -4,7 +4,10 @@
     <% include ../partials/header.ejs %>
 </head>
 <body>
-    <%- include('../partials/menu.ejs', {sitename: 'DevIT'}) %>
+    <%- include('../partials/menu.ejs', {
+            localization: localization.menu
+        })
+    %>
 
     <% include ../partials/footer.ejs %>
 </body>
