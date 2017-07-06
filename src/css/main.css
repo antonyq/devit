@@ -1,5 +1,6 @@
 /* BASE */
 :root {
+    --base-color: white; /* #8D23A7 */
     --main-color: #4BA7EF;
 }
 
@@ -18,7 +19,7 @@ body {
 
     background-attachment: fixed;
     background-repeat: no-repeat;
-    /*background-image: url(../img/main.jpeg);*/
+    background-image: url(../img/main.jpeg);
     background-size: 100%;
 }
 
@@ -47,7 +48,7 @@ nav {
     width: 100%;
     min-width: 1024px; /* temp */
     box-shadow: 2px 2px 1px rgba(0,0,0,0.5);
-    background: white;
+    background: var(--base-color);
 }
 
 .logo {
@@ -86,10 +87,11 @@ nav {
     margin: 0 auto;
     width: 80%;
     height: 100%;
+    background: var(--base-color);
 }
 
 .menu li {
-    background: white;
+    background: var(--base-color);
     list-style: none;
     transition: background 0.25s ease;
 }
@@ -129,16 +131,13 @@ nav {
     position: relative;
     float: left;
     height: 100%;
-    width: 200px;
-    padding: 0 30px;
+    width: 250px;
     text-align: center;
     font-size: 20px;
-    cursor: pointer;
     display: table;
 }
 
 .menu li:hover > a {
-    position: relative;
     text-decoration: none;
     color: var(--main-color);
 }
@@ -150,7 +149,6 @@ nav {
     width: 100%;
     padding: 0;
     font-size: 18px;
-    background: white;
     z-index: -1;
     box-shadow: 2px 2px 1px rgba(0,0,0,0.5);
     transform: translateY(-100%);
@@ -172,11 +170,17 @@ nav {
     height: 30px;
 }
 
+.dropside a {
+    left: 0;
+    padding-left: 5px;
+    width: 245px;
+    text-align: left;
+}
+
 .dropside > a,
 .dropside li > a {
     position: relative;
     top: 3px;
-    left: 5px;
 }
 
 .dropside > ul {
@@ -193,7 +197,8 @@ nav {
 }
 
 .dropside:hover > ul {
-    box-shadow: 2px 2px 1px rgba(0,0,0,0.5);
+    box-shadow: inset 2px 2px 1px rgba(0,0,0,0.5),
+                2px 2px 1px rgba(0,0,0,0.5);
     transform: translateX(0);
 }
 /* HEADER END */
