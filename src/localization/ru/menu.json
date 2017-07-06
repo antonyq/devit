@@ -9,9 +9,11 @@
                     "items": [
                         { "title": "Java" },
                         { "title": "C#" },
+                        { "title": "iOS" },
                         { "title": "C++" },
-                        { "title": "HTML/CSS/JS" },
-                        { "title": "PHP" }
+                        { "title": "Frontend(HTML/CSS/JS)" },
+                        { "title": "PHP" },
+                        { "title": "Python" }
                     ]
                 }, {
                     "title": "QA и тестирование"
@@ -22,6 +24,14 @@
                         { "title": "Машинное обучение" },
                         { "title": "Большие данные" }
                     ]
+                }, {
+                    "title": "Управление проектами"
+                }, {
+                    "title": "Интернет-маркетинг"
+                }, {
+                    "title": "UI/UX Design"
+                }, {
+                    "title": "IT recruitment"
                 }
             ]
         },
@@ -31,8 +41,8 @@
         "about": {
             "title": "О НАС",
             "items": [
-                { "title": "Сотрудничество" },
-                { "title": "Контакты" }
+                { "title": "Контакты" },
+                { "title": "Сотрудничество" }
             ]
         }
     }
