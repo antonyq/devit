@@ -1,6 +1,7 @@
 <script src="../js/models/menu.js"></script>
+<script src="../js/models/lang.js"></script>
 
-<nav>
+<header>
     <a class="logo" href="#">
         <img src="../img/favicon.png" alt="DevIt">
         <span><%= localization.sitename %></span>
@@ -9,11 +10,11 @@
         <% for (let i in localization.paragraphs) { %>
             <% if (localization.paragraphs[i].hasOwnProperty('items')) { %>
                 <li class="dropdown">
-                    <a href="#"><%= localization.paragraphs[i].title %></a>
+                    <a href=""><%= localization.paragraphs[i].title %></a>
                     <ul>
                         <% localization.paragraphs[i].items.forEach((item) => { %>
                             <li class="dropside">
-                                <a href="#"><%= item.title %></a>
+                                <a href=""><%= item.title %></a>
                                 <% if (item.hasOwnProperty('items')) { %>
                                     <ul>
                                         <% item.items.forEach((subItem) => { %>
@@ -26,8 +27,12 @@
                     </ul>
                 </li>
             <% } else { %>
-                    <li><a href="#"><%= localization.paragraphs[i].title %></a></li>
+                    <li><a href=""><%= localization.paragraphs[i].title %></a></li>
             <% } %>
         <% } %>
     </ul>
-</nav>
+    <div class="lang">
+        <div class="ru">RU</div>
+        <div class="ua">UA</div>
+    </div>
+</header>

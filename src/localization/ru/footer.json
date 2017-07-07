@@ -1,0 +1,51 @@
+{
+    "sitename": "DevIT",
+    "paragraphs": {
+        "classes": {
+            "title": "КУРСЫ",
+            "items": [
+                {
+                    "title": "Программирование",
+                    "items": [
+                        { "title": "Java" },
+                        { "title": "C#" },
+                        { "title": "iOS" },
+                        { "title": "C++" },
+                        { "title": "Frontend(HTML/CSS/JS)" },
+                        { "title": "PHP" },
+                        { "title": "Python" }
+                    ]
+                }, {
+                    "title": "QA и тестирование"
+                }, {
+                    "title": "Анализ данных",
+                    "items": [
+                        { "title": "Статистика" },
+                        { "title": "Машинное обучение" },
+                        { "title": "Большие данные" }
+                    ]
+                }, {
+                    "title": "Управление проектами"
+                }, {
+                    "title": "Интернет-маркетинг"
+                }, {
+                    "title": "SEO-оптимизация"
+                }, {
+                    "title": "UI/UX Design"
+                }, {
+                    "title": "IT recruitment"
+                }
+            ]
+        },
+        "news": {
+            "title": "НОВОСТИ"
+        },
+        "about": {
+            "title": "О НАС",
+            "items": [
+                { "title": "Контакты" },
+                { "title": "Сотрудничество" }
+            ]
+        }
+    }
+}

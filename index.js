@@ -23,8 +23,14 @@ app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
     res.render(__dirname + '/src/views/pages/index.ejs', {
+        meta: {
+            title: 'DevIT',
+            description: 'Все курсы IT в Укарине',
+            keywords: ['курсы', 'IT', 'Украина', 'программирование', 'тестирование', 'управление']
+        },
         localization: {
-            menu: require('./src/localization/ru/menu.json')
+            menu: require('./src/localization/ru/menu.json'),
+            footer: require('./src/localization/ru/footer.json')
         }
     });
 });

@@ -1,7 +1,16 @@
 /* BASE */
 :root {
-    --base-color: white; /* #8D23A7 */
-    --main-color: #4BA7EF;
+    --white: white;
+    --lime: #00FFCC;
+    --blue: #0099FF;
+    --black: #212121;
+    --crimson: #FF3366;
+    --grey: #DCDCDC;
+    --transparent: transparent;
+
+    --menu-base-color: var(--white);
+    --menu-hover-color: var(--grey);
+    --menu-support-color: var(--white);
 }
 
 @font-face {
@@ -15,12 +24,22 @@
 }
 
 body {
+    margin: 0;
+
     font-family: Roboto-Regular;
 
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-image: url(../img/main.jpeg);
     background-size: 100%;
+}
+
+main {
+    /*-webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);*/
 }
 
 a:link {
@@ -40,27 +59,29 @@ a:visited {
 /* BASE */
 
 /* HEADER */
-nav {
+header {
     position: fixed;
     top: 0;
     left: 0;
+    padding: 0 20px;
     height: 60px;
-    width: 100%;
-    min-width: 1024px; /* temp */
+    width: calc(100% - 40px);
+    min-width: 1024px;
     box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
-    background: var(--base-color);
+    user-select: none;
+    background: var(--menu-base-color);
 }
 
 .logo {
-    position: absolute;
-    left: 20px;
+    position: relative;
+    float: left;
     height: 50px;
     padding-top: 10px;
     font-family: Roboto-Condensed-Bold;
     min-width: 120px;
     width: 10%;
     font-size: 30px;
-    color: var(--main-color);
+    color: var(--blue);
     user-select: none;
     cursor: pointer;
 }
@@ -68,7 +89,7 @@ nav {
 .logo:visited span,
 .logo:hover span {
     text-decoration: none;
-    color: var(--main-color);
+    color: var(--blue);
 }
 
 .logo > img {
@@ -83,21 +104,27 @@ nav {
 }
 
 .menu {
-    float: right;
+    position: relative;
+    float: left;
+    left: 20px;
     margin: 0 auto;
-    width: 80%;
+    width: 60%;
     height: 100%;
-    background: var(--base-color);
+    background: var(--menu-base-color);
 }
 
 .menu li {
-    background: var(--base-color);
+    background: var(--menu-support-color);
     list-style: none;
     transition: background 0.25s ease;
 }
 
+.menu > li {
+    background: var(--menu-base-color);
+}
+
 .menu li:hover {
-    background: rgb(220, 220, 220);
+    background: var(--menu-hover-color);
 }
 
 .menu li:after {
@@ -105,7 +132,7 @@ nav {
     top: 7px;
     width: 100%;
     content: '';
-    border-bottom: solid 2px var(--main-color);
+    border-bottom: solid 2px var(--blue);
     transform: scaleX(0);
     transition: transform 0.25s ease-in-out;
     display: block;
@@ -143,7 +170,7 @@ nav {
 
 .menu li:hover > a {
     text-decoration: none;
-    color: var(--main-color);
+    color: var(--blue);
 }
 
 .dropdown > ul {
@@ -212,9 +239,58 @@ nav {
     z-index: -1;
     transform: translateX(-100%);
     transition: transform 0.25s ease-out;
+    transition-delay: 0.1s;
 }
 
 .dropside:hover > ul {
     transform: translateX(0);
 }
-/* HEADER END */
+
+/* language button */
+.lang {
+    position: relative;
+    float: right;
+    margin: 15px auto;
+    height: calc(100% - 30px);
+    width: 10%;
+    max-width: 110px;
+    font-size: 20px;
+    cursor: pointer;
+    display: table;
+}
+
+.lang div {
+    color: var(--black);
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.lang div:last-child {
+    border-left: 1px solid var(--black);
+    margin-left: -1px;
+}
+
+.lang div:hover,
+.lang div:active,
+.lang div.selected {
+    color: var(--blue);
+}
+/* language button */
+
+/* HEADER */
+
+
+
+/* FOOTER */
+footer {
+    position: static;
+    bottom: 0;
+    left: 0;
+    height: 300px;
+    width: 100%;
+    min-width: 1024px; /* temp */
+    background: var(--black);
+}
+
+/* FOOTER */
