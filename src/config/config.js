@@ -1,5 +1,6 @@
 module.exports = {
     connectionString: 'mongodb://admin:antonyq5909@ds127731.mlab.com:27731/devit',
+    defaultLang: 'ru'
     // development: {
     //     //url to be used in link generation
     //     url: 'http://my.site.com',

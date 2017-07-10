@@ -21,16 +21,16 @@ app.use(express.static(__dirname + '/src'));
 app.set('views', __dirname + '/src/views');
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
+app.get('/:lang?', (req, res) => {
     res.render(__dirname + '/src/views/pages/index.ejs', {
-        meta: {
-            title: 'DevIT',
-            description: 'Все курсы IT в Укарине',
-            keywords: ['курсы', 'IT', 'Украина', 'программирование', 'тестирование', 'управление']
-        },
         localization: {
-            menu: require('./src/localization/ru/menu.json'),
-            footer: require('./src/localization/ru/footer.json')
+            meta: {
+                title: 'DevIT',
+                description: 'Все курсы IT в Укарине',
+                keywords: ['курсы', 'IT', 'Украина', 'программирование', 'тестирование', 'управление']
+            },
+            menu: require('./src/localization/' + (req.params.lang ? req.params.lang : config.defaultLang) +'/menu.json'),
+            footer: require('./src/localization/' + (req.params.lang ? req.params.lang : config.defaultLang) + '/footer.json')
         }
     });
 });

@@ -14,13 +14,28 @@
 }
 
 @font-face {
-    font-family: Roboto-Regular;
-    src: url(../fonts/Roboto-Regular.ttf);
+    font-family: Roboto-Black;
+    src: url('../fonts/Roboto/Roboto-Black.ttf');
 }
 
 @font-face {
-    font-family: Roboto-Condensed-Bold;
-    src: url(../fonts/RobotoCondensed-Bold.ttf);
+    font-family: Roboto-Bold;
+    src: url('../fonts/Roboto/Roboto-Bold.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Light;
+    src: url('../fonts/Roboto/Roboto-Light.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Medium;
+    src: url('../fonts/Roboto/Roboto-Medium.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url('../fonts/Roboto/Roboto-Regular.ttf');
 }
 
 body {
@@ -30,7 +45,7 @@ body {
 
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-image: url(../img/main.jpeg);
+    background-image: url('../img/main.jpeg');
     background-size: 100%;
 }
 
@@ -77,7 +92,7 @@ header {
     float: left;
     height: 50px;
     padding-top: 10px;
-    font-family: Roboto-Condensed-Bold;
+    font-family: Roboto-Light;
     min-width: 120px;
     width: 10%;
     font-size: 30px;
@@ -143,10 +158,6 @@ header {
     transform-origin: 0% 50%;
 }
 
-.dropside li:hover:after {
-    left: 2px;
-}
-
 .menu a {
     color: black;
     vertical-align: middle;
@@ -162,7 +173,7 @@ header {
     position: relative;
     float: left;
     height: 100%;
-    width: 250px;
+    width: 220px;
     text-align: center;
     font-size: 20px;
     display: table;
@@ -196,9 +207,9 @@ header {
     z-index: 10;
 }
 
-.dropside:first-child {
+/*.dropside:first-child {
     box-shadow: 0 2px 0 rgba(0,0,0,0.5) inset;
-}
+}*/
 
 .dropside,
 .dropside li {
@@ -206,13 +217,13 @@ header {
 }
 
 .dropside:hover li {
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.5),
-                2px 0 0 rgba(0,0,0,0.5) inset;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.5)/*,
+                2px 0 0 rgba(0,0,0,0.5) inset*/;
 }
 
 .dropside:hover li:first-child {
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.5),
-                2px 2px 0 rgba(0,0,0,0.5) inset;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.5)/*,
+                2px 2px 0 rgba(0,0,0,0.5) inset*/;
 }
 
 .dropside a {
@@ -259,21 +270,26 @@ header {
     display: table;
 }
 
-.lang div {
+.lang a {
     color: var(--black);
     text-align: center;
     vertical-align: middle;
     display: table-cell;
 }
 
-.lang div:last-child {
+.lang a:last-child {
     border-left: 1px solid var(--black);
     margin-left: -1px;
 }
 
-.lang div:hover,
-.lang div:active,
-.lang div.selected {
+.lang a:focus,
+.lang a:active,
+.lang a:visited {
+    color: var(--black)
+}
+
+.lang a:hover,
+.lang a.selected {
     color: var(--blue);
 }
 /* language button */

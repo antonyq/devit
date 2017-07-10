@@ -5,5 +5,10 @@ let lang = new Vue({
     },
     created: function () {
         console.log('menu created');
+    },
+    methods: {
+        changeLang: function () {
+
+        }
     }
 });
