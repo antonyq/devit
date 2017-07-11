@@ -1,40 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <%- include('../partials/header.ejs', {
-            meta: localization.meta
-        })
-    %>
-</head>
-<body>
-    <%- include('../partials/menu.ejs', {
-            localization: localization.menu
-        })
-    %>
-
-    <main style="position: relative; top: 100px; z-index: -1;">
-        <ul>
-            <li>change icon / create shortcut</li>
-            <li>modify lang button on menu</li>
-            <li>remove excess shadows from menu</li>
-            <li>add shadows on current hover active lang</li>
-            <li>add localization mechanism (/ru, /ua) due  htef filter</li>
-            <li>add redirect to default lang page</li>
-            <li>add changecolor effect to menu onscroll</li>
-            <hr>
-            <li>add filter/blur effect on progress</li>
-            <li>create material design footer</li>
+<% layout('../layout') %>
 
 
-            <% for (let i = 0; i < 30; i++) { %>
-                <br>
-            <% } %>
-        </ul>
-    </main>
+<main style="position: relative; top: 100px; z-index: -1;">
+    <ul>
+        <li>change icon / create shortcut</li>
+        <li>change lang mechanism </li>
+        <hr>
+        <li>add filter/blur effect on progress</li>
+        <li>create material design footer</li>
 
-    <%- include('../partials/footer.ejs', {
-            localization: localization.footer
-        })
-     %>
-</body>
-</html>
+
+        <% for (let i = 0; i < 100; i++) { %>
+            <br>
+        <% } %>
+    </ul>
+</main>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang=<%= language %>>
+<head>
+    <title><%= localization.meta.title %></title>
+    <meta name="description" content="<%= localization.meta.description %>">
+    <meta name="keywords" content="<%= localization.meta.keywords.join() %>">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/favicon.png">
+
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="../css/libs/aos.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <!-- STYLES -->
+
+
+    <!-- SCRIPTS -->
+    <script src="../js/libs/aos.min.js"></script>
+    <script src="../js/libs/vue.min.js"></script>
+    <!-- SCRIPTS -->
+</head>
+<body>
+    <%- partial('partials/header.ejs', {
+        siteName: siteName,
+        location: location,
+        language: language,
+        localization: localization.header
+    }) %>
+
+    <%- body %>
+
+    <%- partial('partials/footer.ejs', {
+        siteName: siteName,
+        location: location,
+        language: language,
+        localization: localization.footer
+    }) %>
+</body>
+</html>

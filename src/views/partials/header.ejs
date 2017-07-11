@@ -1,21 +1,38 @@
-<title><%= meta.title %></title>
-<meta name="description" content="<%= meta.description %>">
-<meta name="keywords" content="<%= meta.keywords.join() %>">
+<script src="../js/models/menu.js"></script>
+<script src="../js/models/lang.js"></script>
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="../img/favicon.png">
-
-
-<!-- STYLES -->
-<link rel="stylesheet" href="../css/libs/aos.min.css">
-<link rel="stylesheet" href="../css/main.css">
-<!-- STYLES -->
-
-
-<!-- SCRIPTS -->
-<script src="../js/libs/aos.min.js"></script>
-<script src="../js/libs/vue.min.js"></script>
-
-<script src="../js/app.js"></script>
-<!-- SCRIPTS -->
+<header v-bind:class="{ 'scrolled': isScrolled }">
+    <a v-bind:class="{ 'scrolled': isScrolled }" class="logo" href="">
+        <img src="../img/favicon.png" alt=<%= siteName %>>
+        <span><%= siteName %></span>
+    </a>
+    <ul class="menu">
+        <% for (let i in localization.paragraphs) { %>
+            <% if (localization.paragraphs[i].hasOwnProperty('items')) { %>
+                <li class="dropdown">
+                    <a href=<%= `/${language}/${localization.paragraphs[i].link}` %>><%= localization.paragraphs[i].title %></a>
+                    <ul>
+                        <% localization.paragraphs[i].items.forEach((item) => { %>
+                            <li class="dropside">
+                                <a href=""><%= item.title %></a>
+                                <% if (item.hasOwnProperty('items')) { %>
+                                    <ul>
+                                        <% item.items.forEach((subItem) => { %>
+                                            <li><a href=""><%= subItem.title %></a></li>
+                                        <% }) %>
+                                    </ul>
+                                <% } %>
+                            </li>
+                        <% }); %>
+                    </ul>
+                </li>
+            <% } else { %>
+                    <li><a href=<%= `/${language}/${localization.paragraphs[i].link}` %>><%= localization.paragraphs[i].title %></a></li>
+            <% } %>
+        <% } %>
+    </ul>
+    <div class="lang">
+        <a class="ru" href='ru'>RU</a>
+        <a class="ua" href='ua'>UA</a>
+    </div>
+</header>

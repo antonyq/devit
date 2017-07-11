@@ -1,4 +1,4 @@
-let lang = new Vue({
+new Vue({
     el: '.menu',
     data: {
         selected: 'ru'
