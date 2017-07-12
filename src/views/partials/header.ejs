@@ -1,8 +1,7 @@
 <script src="../js/models/menu.js"></script>
-<script src="../js/models/lang.js"></script>
 
 <header v-bind:class="{ 'scrolled': isScrolled }">
-    <a v-bind:class="{ 'scrolled': isScrolled }" class="logo" href="">
+    <a v-bind:class="{ 'scrolled': isScrolled }" class="logo" href=<%= `/${language}` %>>
         <img src="../img/favicon.png" alt=<%= siteName %>>
         <span><%= siteName %></span>
     </a>
@@ -32,7 +31,7 @@
         <% } %>
     </ul>
     <div class="lang">
-        <a class="ru" href='ru'>RU</a>
-        <a class="ua" href='ua'>UA</a>
+        <a class="ru <%= (language == 'ru') ? 'selected' : '' %>" href="/ru/<%= location %>">RU</a>
+        <a class="ua <%= (language == 'ua') ? 'selected' : '' %>" href="/ua/<%= location %>">UA</a>
     </div>
 </header>

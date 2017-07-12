@@ -30,30 +30,28 @@ app.get('/:lang?/:page?', (req, res) => {
     res.render(`${__dirname}/src/views/pages/${req.params.page || 'index'}.ejs`, getDefaultDataObject(req));
 });
 
-function getLang (req) {
-    let match = req.url.match(/^\/([A-Z]{2})([\/\?].*)?$/i);
-    return match ? match[1] : config.defaultLang;
-}
-
-function getLocation (req) {
-    console.log(req.route);
-    return req.route;
+function getReqData (req) {
+    let splittedPath = req.originalUrl.split('/');
+    return {
+        lang: splittedPath ? (splittedPath[1] || config.defaultLang) : config.defaultLang,
+        location: splittedPath ? (splittedPath[2] || '') : ''
+    };
 }
 
 function getDefaultDataObject (req) {
-    let lang = getLang(req);
+    let reqData = getReqData(req);
     return {
         siteName: config.siteName,
-        location: getLocation(req),
-        language: lang,
+        location: reqData.location,
+        language: reqData.lang,
         localization: {
             meta: {
                 title: 'DevIT',
                 description: 'Все курсы IT в Укарине',
                 keywords: ['курсы', 'IT', 'Украина', 'программирование', 'тестирование', 'управление']
             },
-            header: require(`./src/localization/${lang}/header.json`),
-            footer: require(`./src/localization/${lang}/footer.json`)
+            header: require(`./src/localization/${reqData.lang}/header.json`),
+            footer: require(`./src/localization/${reqData.lang}/footer.json`)
         }
     }
 }
